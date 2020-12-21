@@ -11,12 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     //Variables
-    EditText username, password, repassword;
-    TextView forgot;
-    Button signup, signin;
-    DBHelper DB;
+    EditText mTextUsername;
+    EditText mTextPassword;
+    Button mButtonLogin;
+    TextView mTextViewRegister, forgot;
+    DatabaseHelper db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,61 +25,44 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Initialization of the variables
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        repassword = (EditText) findViewById(R.id.repassword);
-        signup = (Button) findViewById(R.id.btnsignup);
-        signin = (Button) findViewById(R.id.btnsignin);
+        db = new DatabaseHelper(this);
+        mTextUsername = (EditText)findViewById(R.id.edittext_username);
+        mTextPassword = (EditText)findViewById(R.id.edittext_password);
+        mButtonLogin = (Button) findViewById(R.id.button_login);
+        mTextViewRegister = (TextView) findViewById(R.id.textview_register);
         forgot = (TextView) findViewById(R.id.btnforgot);
 
-        DB = new DBHelper(this);
-
-        //When the person click on the button sign up
-        signup.setOnClickListener(new View.OnClickListener() {
+        //After clicking on the register text, it will go to the page Register
+        mTextViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = username.getText().toString();
-                String pass = password.getText().toString();
-                String repass = repassword.getText().toString();
-
-                //si un des champs est vide
-                if (user.equals("")||pass.equals("")||repass.equals(""))
-                    Toast.makeText(MainActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                else{
-                    if (pass.equals(repass)){
-                        Boolean checkuser = DB.checkusername(user);
-                        if (checkuser==false){
-                            Boolean insert = DB.insertData(user, pass);
-                            //if data has been inserted it will switch to Home Activity
-                            if (insert==true){
-                                Toast.makeText(MainActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                                startActivity(intent);
-                            }else{
-                                Toast.makeText(MainActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
-
-
-                            }
-                        }
-                        else{
-                            Toast.makeText(MainActivity.this, "User already exists! Please sign in", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    else{
-                        Toast.makeText(MainActivity.this, "Password not matching", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
+                Intent registerIntent = new Intent(MainActivity.this,RegisterActivity.class);
+                startActivity(registerIntent);
             }
         });
 
-        //When the person click on the button sign in
-        signin.setOnClickListener(new View.OnClickListener() {
+        mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //permet d'aller à la page LoginActivity
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                /*String user = mTextUsername.getText().toString().trim();
+                String pwd = mTextPassword.getText().toString().trim();
+                Boolean res = db.checkusernamepassword(user,pwd);*/
+
+                String user = mTextUsername.getText().toString();
+                String pass = mTextPassword.getText().toString();
+
+                if (user.equals("")||pass.equals(""))
+                    Toast.makeText(MainActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                else{
+                    Boolean checkuserpass = db.checkusernamepassword(user, pass);
+                    if (checkuserpass==true){
+                        Toast.makeText(MainActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), HomeMenu.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(MainActivity.this, "Invalid username or password, retry!", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
 
@@ -86,11 +70,10 @@ public class MainActivity extends AppCompatActivity {
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //permet d'aller à la page PasswordActivity
-                Intent intent = new Intent(getApplicationContext(), PasswordActivity.class);
+                //permet d'aller à la page ForgotPassword
+                Intent intent = new Intent(getApplicationContext(), ForgotPassword.class);
                 startActivity(intent);
             }
         });
-
     }
 }

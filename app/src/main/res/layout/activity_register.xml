@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".RegisterActivity"
+
     android:orientation="vertical"
     android:gravity="center_horizontal">
-
 
     <TextView
         android:layout_width="365dp"
@@ -16,35 +16,48 @@
         android:drawableLeft="@drawable/logo"
         android:drawablePadding="9dp"
         android:fontFamily="@font/breeserifregular"
-        android:text="Welcome,
-        sign in into your account"
+        android:text="
+
+
+       Create a new account"
         android:textColor="@color/black"
         android:textSize="30dp" />
 
     <EditText
         android:id="@+id/edittext_username"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="80dp"
+        android:paddingLeft="10dp"
         android:hint="@string/username"
         android:drawableLeft="@drawable/username"
         android:drawablePadding="10dp"/>
 
     <EditText
         android:id="@+id/edittext_password"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="25dp"
+        android:paddingLeft="10dp"
         android:hint="@string/password"
+        android:drawableLeft="@drawable/password"
+        android:drawablePadding="10dp"/>
+    <EditText
+        android:id="@+id/edittext_cnf_password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:hint="@string/confirm_password"
+        android:paddingLeft="10dp"
         android:drawableLeft="@drawable/password"
         android:drawablePadding="10dp"/>
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_register"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
-        android:text="@string/login"
+        android:text="@string/register"
         android:backgroundTint="@color/greenpale"/>
 
     <LinearLayout
@@ -56,29 +69,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="@string/not_registered"/>
+            android:text="@string/already_registered"/>
 
         <TextView
-            android:id="@+id/textview_register"
+            android:id="@+id/textview_login"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:paddingLeft="10dp"
             android:textStyle="bold"
-            android:text="@string/register"/>
+            android:text="@string/login"/>
 
     </LinearLayout>
-    <TextView
-        android:id="@+id/btnforgot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="Forgot password"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Copyright © SAVETECH 2020"/>
+
 
 </LinearLayout>
