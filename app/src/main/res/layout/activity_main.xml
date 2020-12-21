@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:drawableLeft="@drawable/logo"
         android:drawablePadding="9dp"
         android:fontFamily="@font/breeserifregular"
@@ -78,7 +78,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:text="Copyright © SAVETECH 2020"/>
 
 </LinearLayout>

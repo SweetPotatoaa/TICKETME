@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="365dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:drawableLeft="@drawable/logo"
         android:drawablePadding="9dp"
         android:fontFamily="@font/breeserifregular"
@@ -29,6 +29,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="80dp"
         android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:hint="@string/username"
         android:drawableLeft="@drawable/username"
         android:drawablePadding="10dp"/>
@@ -39,6 +41,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="25dp"
         android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:hint="@string/password"
         android:drawableLeft="@drawable/password"
         android:drawablePadding="10dp"/>
@@ -47,6 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:hint="@string/confirm_password"
         android:paddingLeft="10dp"
         android:drawableLeft="@drawable/password"

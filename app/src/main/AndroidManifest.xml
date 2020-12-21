@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Loginsqlite">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".StatActivity"></activity>
+        <activity android:name=".MyticketsActivity" />
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".HomeMenu" />
         <activity android:name=".ForgotPassword" />
         <activity
