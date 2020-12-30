@@ -11,6 +11,8 @@ public class HomeMenu extends AppCompatActivity {
 
     CardView cardTicket;
     CardView cardStat;
+    CardView cardShop;
+    CardView cardScanQR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,8 @@ public class HomeMenu extends AppCompatActivity {
 
         cardTicket = findViewById(R.id.cardticket);
         cardStat = findViewById(R.id.cardstat);
+        cardShop = findViewById(R.id.cardshop);
+        cardScanQR = findViewById(R.id.cardscanQR);
 
 
         cardTicket.setOnClickListener(new View.OnClickListener() {
@@ -38,5 +42,26 @@ public class HomeMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        cardShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //permet d'aller à la page My Shop
+                Intent intent = new Intent(getApplicationContext(), MyshopActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardScanQR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //permet d'aller à la page Add a new ticket
+                Intent intent = new Intent(getApplicationContext(), ScanQRActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 }
