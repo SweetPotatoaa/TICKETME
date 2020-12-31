@@ -7,4 +7,6 @@
     <string name="already_registered">Already registered ?</string>
     <string name="register">REGISTER</string>
     <string name="not_registered">Not registered ?</string>
+    <string name="bar_chart">Bar Chart</string>
+    <string name="pie_chart">Pie Chart</string>
 </resources>

@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button mButtonLogin;
     TextView mTextViewRegister, forgot;
     DatabaseHelper db;
+    CheckBox showpassword;
 
 
     @Override
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         mButtonLogin = (Button) findViewById(R.id.button_login);
         mTextViewRegister = (TextView) findViewById(R.id.textview_register);
         forgot = (TextView) findViewById(R.id.btnforgot);
+        showpassword = (CheckBox) findViewById(R.id.showpassword);
 
         //After clicking on the register text, it will go to the page Register
         mTextViewRegister.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +79,20 @@ public class MainActivity extends AppCompatActivity {
                 //permet d'aller à la page ForgotPassword
                 Intent intent = new Intent(getApplicationContext(), ForgotPassword.class);
                 startActivity(intent);
+            }
+        });
+
+
+        //To show the password
+        showpassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonButton, boolean b) {
+                if (b){
+                    mTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    mTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+
             }
         });
     }
