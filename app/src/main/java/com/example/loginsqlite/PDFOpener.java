@@ -20,23 +20,23 @@ public class PDFOpener extends AppCompatActivity {
 
         if(getItem.equals("Ticket 1")){
 
-            myPDFViewer.fromAsset("Becoming a great leader in business.pdf").load();
+            myPDFViewer.fromAsset("Auchan-1.pdf").load();
 
         }
 
         if(getItem.equals("Ticket 2")){
 
-            myPDFViewer.fromAsset("Business and Website Traffic.pdf").load();
+            myPDFViewer.fromAsset("Darty-1.pdf").load();
 
         }
         if(getItem.equals("Ticket 3")){
 
-            myPDFViewer.fromAsset("How to Build Products That Run Businesses.pdf").load();
+            myPDFViewer.fromAsset("Intermarché-1.pdf").load();
 
         }
         if(getItem.equals("Ticket 4")){
 
-            myPDFViewer.fromAsset("The Entrepreneur's Mindset.pdf").load();
+            myPDFViewer.fromAsset("Sephora-1.pdf").load();
 
         }
 
