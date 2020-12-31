@@ -8,14 +8,16 @@ import org.w3c.dom.Text;
 
 public class ProgramViewHolder {
 
-    ImageView itemImage;
-    TextView programTitle;
-    TextView programDescription;
+
+    TextView shop;
+    TextView date;
+    TextView id;
+
     ProgramViewHolder(View v)
     {
-        itemImage = v.findViewById(R.id.imageView);
-        programTitle = v.findViewById(R.id.textView1);
-        programDescription = v.findViewById(R.id.textView2);
+
+        shop = v.findViewById(R.id.textView1);
+        date = v.findViewById(R.id.textView2);
 
     }
 }

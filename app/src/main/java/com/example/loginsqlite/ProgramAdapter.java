@@ -1,4 +1,4 @@
-package com.example.loginsqlite;
+/*package com.example.loginsqlite;
 
 
 import android.content.Context;
@@ -50,4 +50,4 @@ public class ProgramAdapter extends ArrayAdapter<String> {
         });
         return singleItem;
     }
-}
+}*/
