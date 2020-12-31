@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Loginsqlite">
-        <activity android:name=".ScanQRActivity"></activity>
+        <activity android:name=".PDFOpener" />
+        <activity android:name=".ScanQRActivity" />
         <activity android:name=".MyshopActivity" />
         <activity android:name=".StatActivity" />
         <activity android:name=".MyticketsActivity" />
