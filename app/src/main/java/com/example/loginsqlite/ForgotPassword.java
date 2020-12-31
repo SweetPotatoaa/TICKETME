@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,6 +20,7 @@ public class ForgotPassword extends AppCompatActivity {
     EditText pass, repass;
     Button confirm;
     DatabaseHelper DB;
+    CheckBox showpassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,7 @@ public class ForgotPassword extends AppCompatActivity {
         repass = (EditText) findViewById(R.id.repassword_reset);
         confirm = (Button) findViewById(R.id.btnconfirm);
         DB = new DatabaseHelper(this);
+        showpassword = (CheckBox) findViewById(R.id.showpassword);
 
 
         confirm.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +68,21 @@ public class ForgotPassword extends AppCompatActivity {
                         Toast.makeText(ForgotPassword.this, "User does not exists", Toast.LENGTH_SHORT).show();
 
                     }
+                }
+
+            }
+        });
+
+        //To show the password
+        showpassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonButton, boolean b) {
+                if (b){
+                    pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    repass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    repass.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
 
             }

@@ -6,8 +6,11 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class HomeMenu extends AppCompatActivity {
+
+    EditText e1;
 
     CardView cardTicket;
     CardView cardStat;
@@ -18,6 +21,8 @@ public class HomeMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_menu);
+
+        e1 = (EditText)findViewById(R.id.editText);
 
         cardTicket = findViewById(R.id.cardticket);
         cardStat = findViewById(R.id.cardstat);
@@ -61,6 +66,11 @@ public class HomeMenu extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void send(View v){
+        MessageSender messageSender = new MessageSender();
+        messageSender.execute(e1.getText().toString());
     }
 
 

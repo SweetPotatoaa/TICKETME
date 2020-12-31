@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText mTextCnfPassword;
     Button mButtonRegister;
     TextView mTextViewLogin;
+    CheckBox showpassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         mTextCnfPassword = (EditText)findViewById(R.id.edittext_cnf_password);
         mButtonRegister = (Button)findViewById(R.id.button_register);
         mTextViewLogin = (TextView)findViewById(R.id.textview_login);
+        showpassword = (CheckBox) findViewById(R.id.showpassword);
 
         //After clicking on the login text, it will go to the page Register
         mTextViewLogin.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +85,20 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        //To show the password
+        showpassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonButton, boolean b) {
+                if (b){
+                    mTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    mTextCnfPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    mTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    mTextCnfPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+
+            }
+        });
 
     }
 }
