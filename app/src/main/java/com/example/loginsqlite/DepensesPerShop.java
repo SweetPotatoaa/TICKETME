@@ -2,15 +2,11 @@ package com.example.loginsqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-<<<<<<< HEAD
 import android.graphics.Color;
-=======
-import android.content.Intent;
->>>>>>> master
 import android.os.Bundle;
-import android.view.View;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -18,14 +14,13 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
-public class StatActivity extends AppCompatActivity {
+public class DepensesPerShop extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stat);
+        setContentView(R.layout.activity_depenses_per_shop);
 
-<<<<<<< HEAD
         PieChart pieChart   = findViewById(R.id.buttonPieChart);
 
         ArrayList<PieEntry> visitors = new ArrayList<>();
@@ -53,20 +48,7 @@ public class StatActivity extends AppCompatActivity {
 
 
 
-=======
-        findViewById(R.id.buttonPieChart).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), DepensesPerShop.class));
-            }
-        });
-
-        findViewById(R.id.buttonBarChart).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), DepensesByPeriod.class));
-            }
-        });
->>>>>>> master
     }
 }
+
+
