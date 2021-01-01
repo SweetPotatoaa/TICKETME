@@ -14,15 +14,15 @@ import androidx.annotation.Nullable;
 public class ProgramAdapter extends ArrayAdapter<String> {
     Context context;
     int[] images;
-    String[] programName;
-    String[] programDescription;
+    String[] ticketName;
+    String[] ticketNumber;
 
-    public ProgramAdapter( Context context, String[] programName, int[] images, String[] programDescription) {
-        super(context, R.layout.single_item,R.id.textView1, programName);
+    public ProgramAdapter( Context context, String[] ticketName, int[] images, String[] ticketNumber) {
+        super(context, R.layout.single_item,R.id.textView1, ticketName);
         this.context = context;
         this.images = images;
-        this.programName = programName;
-        this.programDescription = programDescription;
+        this.ticketName = ticketName;
+        this.ticketNumber = ticketNumber;
     }
 
     @Override
@@ -40,12 +40,12 @@ public class ProgramAdapter extends ArrayAdapter<String> {
             holder = (ProgramViewHolder) singleItem.getTag();
         }
         holder.itemImage.setImageResource(images[position]);
-        holder.programTitle.setText(programName[position]);
-        holder.programDescription.setText(programDescription[position]);
+        holder.ticketTitle.setText(ticketName[position]);
+        holder.ticketNumber.setText(ticketNumber[position]);
         singleItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"You clicked:"+programName[position],Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"You clicked:"+ticketName[position],Toast.LENGTH_SHORT).show();
             }
         });
         return singleItem;

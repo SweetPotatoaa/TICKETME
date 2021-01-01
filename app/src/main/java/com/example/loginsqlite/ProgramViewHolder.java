@@ -9,13 +9,13 @@ import org.w3c.dom.Text;
 public class ProgramViewHolder {
 
     ImageView itemImage;
-    TextView programTitle;
-    TextView programDescription;
+    TextView ticketTitle;
+    TextView ticketNumber;
     ProgramViewHolder(View v)
     {
         itemImage = v.findViewById(R.id.imageView);
-        programTitle = v.findViewById(R.id.textView1);
-        programDescription = v.findViewById(R.id.textView2);
+        ticketTitle = v.findViewById(R.id.textView1);
+        ticketNumber = v.findViewById(R.id.textView2);
 
     }
 }
