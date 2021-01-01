@@ -1,4 +1,4 @@
-/*package com.example.loginsqlite;
+package com.example.loginsqlite;
 
 
 import android.content.Context;
@@ -14,15 +14,17 @@ import androidx.annotation.Nullable;
 public class ProgramAdapter extends ArrayAdapter<String> {
     Context context;
     int[] images;
-    String[] ticketName;
-    String[] ticketNumber;
+    String[] nameShopList;
+    String[] descriptionList;
+    String[] typeList;
 
-    public ProgramAdapter( Context context, String[] ticketName, int[] images, String[] ticketNumber) {
-        super(context, R.layout.single_item,R.id.textView1, ticketName);
+    public ProgramAdapter( Context context, String[] nameShopList, int[] images, String[] descriptionList, String[]typeList) {
+        super(context, R.layout.single_item,R.id.nameShop, nameShopList);
         this.context = context;
         this.images = images;
-        this.ticketName = ticketName;
-        this.ticketNumber = ticketNumber;
+       this.nameShopList=nameShopList;
+       this.descriptionList = descriptionList;
+       this.typeList = typeList;
     }
 
     @Override
@@ -40,14 +42,15 @@ public class ProgramAdapter extends ArrayAdapter<String> {
             holder = (ProgramViewHolder) singleItem.getTag();
         }
         holder.itemImage.setImageResource(images[position]);
-        holder.ticketTitle.setText(ticketName[position]);
-        holder.ticketNumber.setText(ticketNumber[position]);
+        holder.nameShop.setText(nameShopList[position]);
+        holder.shopType.setText(typeList[position]);
+        holder.description.setText(descriptionList[position]);
         singleItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"You clicked:"+ticketName[position],Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"You clicked:"+nameShopList[position],Toast.LENGTH_SHORT).show();
             }
         });
         return singleItem;
     }
-}*/
+}

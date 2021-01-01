@@ -10,25 +10,21 @@ public class ProgramViewHolder {
 
 
 
-    TextView shop;
-    TextView date;
-/*    TextView id;
-
-    ProgramViewHolder(View v)
-    {
-
-        shop = v.findViewById(R.id.textView1);
-        date = v.findViewById(R.id.textView2);
-
     ImageView itemImage;
-    TextView ticketTitle;
-    TextView ticketNumber;
-    ProgramViewHolder(View v)
-    {
-        itemImage = v.findViewById(R.id.imageView);
-        ticketTitle = v.findViewById(R.id.textView1);
-        ticketNumber = v.findViewById(R.id.textView2);
+    TextView nameShop;
+   TextView shopType;
+   TextView description;
 
 
-    }*/
+
+
+    ProgramViewHolder(View v) {
+
+        itemImage = v.findViewById(R.id.image);
+        nameShop = v.findViewById(R.id.nameShop);
+        shopType = v.findViewById(R.id.shopType);
+        description = v.findViewById(R.id.description);
+
+
+    }
 }

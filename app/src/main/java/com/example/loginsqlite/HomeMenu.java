@@ -48,7 +48,8 @@ public class HomeMenu extends AppCompatActivity {
             }
         });
 
-        cardShop.setOnClickListener(new View.OnClickListener() {
+
+           cardShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //permet d'aller à la page My Shop
