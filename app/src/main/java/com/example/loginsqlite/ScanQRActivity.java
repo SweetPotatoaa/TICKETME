@@ -81,15 +81,13 @@ public class ScanQRActivity extends AppCompatActivity {
                 ss = new ServerSocket(5000);
                 while (true) {
                     s = ss.accept();
+                    System.out.println("server socket accepted\n");
                     isr = new InputStreamReader(s.getInputStream());
+                    System.out.println("message retrieved");
                     br = new BufferedReader(isr);
+                    System.out.println("message stacked");
                     message = br.readLine();
-                    h.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-                        }
-                    });
+                    h.post(() -> Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
