@@ -16,11 +16,19 @@ allprojects {
     repositories {
         google()
         jcenter()
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         maven{url 'https://jitpack.io'};
 =======
         maven{url'https://jitpack.io'}
 >>>>>>> master
+=======
+
+        maven{url 'https://jitpack.io'};
+
+
+
+>>>>>>> Stashed changes
     }
 }
 
