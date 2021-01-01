@@ -26,15 +26,3 @@ public class MyshopActivity extends AppCompatActivity {
 }
 
 
-/*
-
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mytickets);
-        lvProgram = findViewById(R.id.lvProgram);
-        ProgramAdapter programAdapter = new ProgramAdapter(this, programName, programImages, ticketNumber);
-        lvProgram.setAdapter(programAdapter);
-    }*/
