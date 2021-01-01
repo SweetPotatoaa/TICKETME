@@ -8,6 +8,7 @@ import org.w3c.dom.Text;
 
 public class ProgramViewHolder {
 
+<<<<<<< HEAD
 
     TextView shop;
     TextView date;
@@ -18,6 +19,16 @@ public class ProgramViewHolder {
 
         shop = v.findViewById(R.id.textView1);
         date = v.findViewById(R.id.textView2);
+=======
+    ImageView itemImage;
+    TextView ticketTitle;
+    TextView ticketNumber;
+    ProgramViewHolder(View v)
+    {
+        itemImage = v.findViewById(R.id.imageView);
+        ticketTitle = v.findViewById(R.id.textView1);
+        ticketNumber = v.findViewById(R.id.textView2);
+>>>>>>> master
 
     }
 }

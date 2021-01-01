@@ -44,15 +44,15 @@ public class ScanQRActivity extends AppCompatActivity {
     EditText e1;
     private static Socket s;
     private static PrintWriter pw;
-    String message = "";
-    private static String ip = "192.168.56.1";
+    String message ;
+    private static String ip = "192.168.1.108";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clientreceiveivingtickets);
-        e1 = (EditText)findViewById(R.id.editText);
+        e1 = (EditText)findViewById(R.id.editTextMessage);
 
 
     }
@@ -62,7 +62,6 @@ public class ScanQRActivity extends AppCompatActivity {
         message = e1.getText().toString();
         myTask mt = new myTask();
         mt.execute();
-
         Toast.makeText(getApplicationContext(),"Data sent",Toast.LENGTH_LONG).show();
     }
 
@@ -70,7 +69,8 @@ public class ScanQRActivity extends AppCompatActivity {
     {
 
         @Override
-        protected Void doInBackground(Void... voids) {
+        protected Void doInBackground(Void... params) {
+            //String message = voids[0];
             try {
                 s = new Socket(ip, 5000);
                 pw = new PrintWriter((s.getOutputStream()));
