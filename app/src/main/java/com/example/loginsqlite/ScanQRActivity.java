@@ -78,7 +78,7 @@ public class ScanQRActivity extends AppCompatActivity {
         @Override
         public void run() {
             try {
-                ss = new ServerSocket(5000);
+                ss = new ServerSocket(5001);
                 while (true) {
                     s = ss.accept();
                     System.out.println("server socket accepted\n");
