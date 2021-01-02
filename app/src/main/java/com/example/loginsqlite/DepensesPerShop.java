@@ -23,26 +23,46 @@ public class DepensesPerShop extends AppCompatActivity {
 
         PieChart pieChart   = findViewById(R.id.buttonPieChart);
 
-        ArrayList<PieEntry> visitors = new ArrayList<>();
-        visitors.add(new PieEntry(2014, 420));
-        visitors.add(new PieEntry(2015, 475));
-        visitors.add(new PieEntry(2016, 410));
-        visitors.add(new PieEntry(2017, 400));
-        visitors.add(new PieEntry(2018, 300));
-        visitors.add(new PieEntry(2019, 360));
+        ArrayList<PieEntry> intermarche = new ArrayList<PieEntry>();
+        ArrayList<PieEntry> animalis = new ArrayList<PieEntry>();
 
-        PieDataSet pieDataSet = new PieDataSet(visitors, "Visitors");
+PieEntry animals = new PieEntry(100);
+
+
+
+
+
+        intermarche.add(new PieEntry(22, "Animalis"));
+        intermarche.add(new PieEntry(1500, "Darty"));
+        intermarche.add(new PieEntry(35, "Sephora"));
+        intermarche.add(new PieEntry(156, "Auchan"));
+        intermarche.add(new PieEntry(15, "Gifi"));
+
+
+        PieDataSet pieDataSet = new PieDataSet(intermarche,"Magasins");
+
+
 
         PieData pieData = new PieData(pieDataSet);
+
+       pieData.setHighlightEnabled(false);
+
+
+
         pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         pieDataSet.setValueTextColor(Color.BLACK);
-        pieDataSet.setValueTextSize(16f);
+        pieDataSet.setValueTextSize(10f);
+
+
 
         PieData pieDatas = new PieData(pieDataSet);
 
+
+
         pieChart.setData(pieDatas);
+
         pieChart.getDescription().setEnabled(false);
-        pieChart.setCenterText("Visitors");
+        pieChart.setCenterText("Expenses");
         pieChart.animate();
 
 
