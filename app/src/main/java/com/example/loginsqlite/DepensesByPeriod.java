@@ -23,15 +23,15 @@ public class DepensesByPeriod extends AppCompatActivity {
 
         BarChart barChart = findViewById(R.id.barChart);
 
-        ArrayList<BarEntry> visitors = new ArrayList<>();
-        visitors.add(new BarEntry(2014, 420));
-        visitors.add(new BarEntry(2015, 475));
-        visitors.add(new BarEntry(2016, 410));
-        visitors.add(new BarEntry(2017, 400));
-        visitors.add(new BarEntry(2018, 300));
-        visitors.add(new BarEntry(2019, 360));
+        ArrayList<BarEntry> expensesByPeriod = new ArrayList<>();
+        expensesByPeriod.add(new BarEntry(7, 620));
+        expensesByPeriod.add(new BarEntry(8, 475));
+        expensesByPeriod.add(new BarEntry(9, 510));
+        expensesByPeriod.add(new BarEntry(10, 300));
+        expensesByPeriod.add(new BarEntry(11, 700));
+        expensesByPeriod.add(new BarEntry(12, 460));
 
-        BarDataSet barDataSet = new BarDataSet(visitors, "Visitors");
+        BarDataSet barDataSet = new BarDataSet(expensesByPeriod, "Expenses in euros €");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
         barDataSet.setValueTextSize(16f);
@@ -40,7 +40,7 @@ public class DepensesByPeriod extends AppCompatActivity {
 
         barChart.setFitBars(true);
         barChart.setData(barData);
-        barChart.getDescription().setText("Bar Chart Exemple");
+        barChart.getDescription().setText("Expenses by month");
         barChart.animateY(2000);
     }
 }
