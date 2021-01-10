@@ -9,36 +9,21 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//receive the ticket (PNG)
+import android.graphics.Picture;
+
+
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
 
-/*public class ScanQRActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan_q_r);
-    }
-}
 
-package com.example.loginsqlite;
-*/
-        import android.os.AsyncTask;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.EditText;
-        import android.widget.Toast;
 
-        import androidx.appcompat.app.AppCompatActivity;
-
-        import java.io.BufferedReader;
-        import java.io.IOException;
-        import java.io.InputStreamReader;
-        import java.io.PrintWriter;
-        import java.net.ServerSocket;
-        import java.net.Socket;
-        import java.nio.channels.AsynchronousChannelGroup;
 
 public class ScanQRActivity extends AppCompatActivity {
 
@@ -46,15 +31,15 @@ public class ScanQRActivity extends AppCompatActivity {
     private static Socket s;
     private static ServerSocket ss;
     private static PrintWriter pw;
-    String message ;
-    private static String ip = "192.168.1.108";
+    String message="" ;
+    private static String ip = "192.168.43.40";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clientreceiveivingtickets);
-        e1 = (EditText)findViewById(R.id.editTextMessage);
+        e1 = findViewById(R.id.editTextMessage);
 
         Thread myThread = new Thread(new MyServerThread());
         myThread.start();
@@ -103,11 +88,17 @@ public class ScanQRActivity extends AppCompatActivity {
             //String message = voids[0];
             try {
                 s = new Socket(ip, 5000);
+
+                //send a message
                 pw = new PrintWriter((s.getOutputStream()));
                 pw.write(message);
                 pw.flush();
                 pw.close();
                 s.close();
+
+                //send a ticket (PNG)
+                //BufferedImage
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
